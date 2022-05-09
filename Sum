@@ -1,0 +1,51 @@
+You're given an integer N. Write a program to calculate the sum of all the digits of N.
+
+Input
+The first line contains an integer T, the total number of testcases. Then follow T lines, each line contains an integer N.
+
+Output
+For each test case, calculate the sum of digits of N, and display it in a new line.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ N ≤ 1000000
+Example
+Input
+3 
+12345
+31203
+2123
+Output
+15
+9
+8
+
+import java.io.*;
+import java.util.*;
+
+class sum {
+  public static void main(String[] args) {
+
+    Scanner in = new Scanner(System.in);
+    System.out.println("enter the loop no");
+    int n = in.nextInt();
+
+    for (int i = 0; i < n; i++) {
+      int sum = 0;
+      System.out.println("enter array len val");
+      int len = in.nextInt();
+      int a[] = new int[len];
+      
+      for (int j = 0; j<a.length; j++) {
+        System.out.println("enter sum val");
+        int val = in.nextInt();
+        a[j] = val;
+        //System.out.println(a[j]);
+        sum+=a[j];
+      }
+      System.out.println(sum);
+      
+    }
+
+  }
+}
