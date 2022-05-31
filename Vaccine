@@ -32,3 +32,37 @@ Test case 2: The second dose needs to be taken within 2 to 10 days since Day 14 
 
 Test case 3: The second dose needs to be taken within 5555 to 6666 days and since the Day 4444 lies prior to this range, it is too early now.
 
+
+
+-------------------------------------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+class vac {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+
+
+      if(a<b){
+         System.out.println("too early");
+      }else if(b>=a && a<=10){
+        System.out.println("take second dose");
+      }else{
+        System.out.println("too late");
+        }
+      
+      
+    }
+    
+  
+}
+}
+
