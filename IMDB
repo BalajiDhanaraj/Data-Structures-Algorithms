@@ -37,3 +37,33 @@ Example case 1: Since there is only 1 movie available and requires space equival
 Example case 2: Since out of the 2 available movies, both can fit in the free memory, we only care to take the one with higher rating, i.e, rating of max(50,100)=100.
 
 Example case 3: Since out of the 3 available movies, only the first and the last movies fit in the free memory, we only care to take the one with higher rating amongst these 2, i.e, rating of max(51,50)=51
+
+-------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class store {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+    int space;
+    for(int i=0;i<out;i++){
+
+      int no = sc.nextInt();
+      space = sc.nextInt();
+      int ans = 0;
+      for(int j=1;j<=no;j++){
+        int memory = sc.nextInt();
+        int rate = sc.nextInt();
+        
+          if(memory<=space && ans < rate){
+             ans = rate;
+          }
+ 
+      }
+       System.out.println(ans);
+    }
+    
+  
+}
+}
