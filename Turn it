@@ -31,3 +31,31 @@ Example case 1: Since U=V=1, Chef does not need to brake and will be able to tur
 Example case 2: The smallest velocity Chef's car can have even with the maximum deceleration is 2⋅2−2⋅1⋅1−−−−−−−−−−−√=2–√, which is greater than the maximum allowed velocity for a safe turn.
 
 Example case 3: The smallest velocity Chef's car can have with the maximum deceleration is again 2–√, which is smaller than the maximum allowed velocity for a safe turn.
+
+----------------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class turn {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int u = sc.nextInt();
+      int v = sc.nextInt();
+      int a = sc.nextInt();
+      int s = sc.nextInt();
+
+      int newton = (int)Math.pow(u,2)-2*a*s;
+      int velocity = (int) Math.pow(v,2);
+      
+      if(newton<=velocity){
+        System.out.println("Yes");
+      }else{
+        System.out.println("No");
+      } 
+    }
+}
+}
