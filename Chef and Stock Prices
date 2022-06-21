@@ -26,3 +26,32 @@ Explanation
 Test Case 1: The price of the stock after gaining 7% will become 107, which is in Chef's range of [93,108]. Hence, Chef will buy the stock.
 Test Case 2: The price of the stock after falling 7% will become 93, which is not in Chef's range of [94,100]. Hence, Chef will not buy the stock.
 Test Case 3: The price of the stock after falling 17% will become 151.89, which is not in Chef's range of [152,172]. Hence, Chef will not buy the stock
+-------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class stock {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int s = sc.nextInt();
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+
+      int val = s*(100+c)/100 ;// 166
+      // 151.23>=152 && 166<172
+      
+      if(a<=val && val<=b){
+        System.out.println("Yes");
+      }else{
+        System.out.println("No");
+      }
+      
+     
+    }
+}
+}
