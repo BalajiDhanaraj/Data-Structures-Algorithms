@@ -25,3 +25,30 @@ Explanation
 Example case 1: The optimal choice is to choose the entire sequence, since the sum of all its elements is 1+2+3=6, which is even.
 
 Example case 3: One of the optimal choices is to choose the subsequence [1,2,3,4], which has an even sum.
+-----------------------------------------------------------------------------------
+element 4 = 1+2+3+4 = 10 ---> (4*(4+1))/2 ---> (4*(5))/2 ----> 20/2 ---> 10 
+------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class max {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int n = sc.nextInt();
+
+      int sum = (n*(n+1))/2;
+
+      //System.out.println(sum);
+      if(sum%2==1){
+        System.out.println(n-1);
+      }else{
+        System.out.println(n);
+      }  
+    }
+    
+}
+}
