@@ -34,3 +34,33 @@ Test Case 1: A possible sequence of moves is (1,1)→(1,2)→(2,2).
 Test Case 2: There is a possible sequence in 3 moves, but not in exactly 4 moves.
 
 Test Case 3: A possible sequence of moves is (1,1)→(1,0)→(0,0)→(1,0).
+-----------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+class tom {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+      int d = sc.nextInt();
+      int k = sc.nextInt();
+
+      int dist = Math.abs(a-c) + Math.abs(b-d);
+      // k is no of step , so if the step is higher 
+      // than the distance , we will resolve by k%2 and dist%2 ==> 
+      if(k>=dist && k%2 == dist%2){
+        System.out.println("Yes");
+      }else{
+        System.out.println("No");
+      }
+
+    }
+}
+}
