@@ -34,3 +34,42 @@ Test case 1: The person standing at the front of the queue is a child and the ne
 Test case 2: Chef is standing at the front of the queue. So his vaccination is completed after 3 minutes.
 
 Test case 3: Chef is standing at the rear of the queue. So it takes a total of 2+2+2=6 minutes to complete Chef's vaccination.
+------------------------------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class vacqueue {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int out = sc.nextInt();
+
+    for(int i=0;i<out;i++){
+
+      int n = sc.nextInt();
+      int p = sc.nextInt();
+      int x = sc.nextInt();
+      int y = sc.nextInt();
+
+      int[] val = new int[n];
+
+      for(int j=0;j<val.length;j++){
+        int data = sc.nextInt();
+        val[j] = data;
+      }
+      int min = 0;
+      for(int k=0;k<p;k++){
+        
+        if(val[k]==1){
+          //System.out.println("val[k] y"+val[k]);
+           min+= y; 
+        }else{
+         // System.out.println("val[k] x"+val[k]);
+           min+=x;
+        }
+        
+      }
+      
+      System.out.println(min);
+    }
+}
+}
