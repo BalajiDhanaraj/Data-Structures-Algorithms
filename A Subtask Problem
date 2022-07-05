@@ -43,3 +43,41 @@ Test case 2: Chef's code does not pass all 3 test cases, but passes the first 2 
 
 Test case 3: Chef's code passes all the 4 test cases. Hence he gets 100 points.
 ------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class subtask {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+      int t = sc.nextInt();  
+      
+    for(int i=0;i<t;i++){
+      int n = sc.nextInt();
+      int m = sc.nextInt();
+      int k = sc.nextInt();
+      
+      int[] val = new int[n];
+     
+      for(int j=0;j<val.length;j++){
+        int a = sc.nextInt();
+        val[j] = a;
+      }
+      int  points = 0;
+      int sum = 0;
+      for(int p=0;p<n;p++){
+         sum = sum + val[p];
+        if(p == m-1 && sum == m ){
+          points = k;
+           //System.out.println(points);
+        }
+      }
+      if(sum == n){
+        points = 100;
+        // System.out.println(points);
+      }
+      System.out.println(points);
+      }
+      
+    }
+}
