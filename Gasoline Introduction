@@ -48,3 +48,44 @@ After traveling 3 units, it passes another car with 2 liters gasoline. Thus, the
 After traveling 4 units, it passes another car with 1 liter gasoline. Thus, the amount of gasoline left after traveling 4 units is 11−1+1=11 liters.
 After traveling 5 units, there is no car with gasoline. Thus, after 5 units, 10 liters of gasoline is left.
 The car can move 10 more units using the leftover gasoline. The total distance travelled is 15 units.
+--------------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class gas {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    int t = sc.nextInt();  
+      
+    for(int i=0;i<t;i++){
+      int n = sc.nextInt();  
+      int[] val = new int[n];
+
+      for(int j=0;j<val.length;j++){
+        int a = sc.nextInt();
+        val[j] = a;
+      }
+
+      
+      int dist = 0;
+      int gas=0;
+      for(int k=0;k<val.length;k++){
+        
+        gas+=val[k];
+        if(gas>0){
+         // System.out.println("yes");
+          dist++;
+          gas--;
+        }else{
+         // System.out.println("no");
+          break;
+          //dist=dist+1;    
+        }
+      }
+      System.out.println(gas+dist);
+      }
+      
+    }
+}
+
