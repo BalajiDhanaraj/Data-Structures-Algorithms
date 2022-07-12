@@ -38,3 +38,30 @@ Explanation
 Example case 1: One of the possible solutions is to choose c=4, remove 1, 0, 4 and 13 coins from bags 1, 2, 3 and 4 respectively, and add 13 coins to bag 5.
 
 Example case 2: The optimal solution is to choose c=3 and remove one coin from each bag.
+-------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class coins {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    int t = sc.nextInt();  
+      
+    for(int i=0;i<t;i++){
+      int n = sc.nextInt(); 
+      int k = sc.nextInt();
+      
+      int[] val = new int[n];
+      int sum = 0;
+      for(int j=0;j<val.length;j++){
+        int a = sc.nextInt();
+        val[j] = a;
+        sum+=val[j];
+      }
+      System.out.println(sum%k);
+      }
+      
+    }
+}
+
