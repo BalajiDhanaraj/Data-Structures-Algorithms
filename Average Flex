@@ -31,3 +31,45 @@ Explanation
 Test case 1: All three students got the highest score. So all three of them will boast.
 Test case 2: Only the student with score 1 will not be able to boast.
 Test case 3: Only the student with score 1 will not be able to boast.
+------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class avg {
+  public static void main(String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
+    int t = sc.nextInt();  
+       
+    for(int i=0;i<t;i++){
+      int n = sc.nextInt(); 
+      int[] val = new int[n];
+      
+      for(int j=0;j<val.length;j++){
+        int a = sc.nextInt();
+        val[j] = a;
+      }
+      int count = 0;
+      for(int k=0;k<n;k++){
+        int equal = 0;
+        int notequal = 0;
+        for(int p=0;p<n;p++){
+          if(k!=p){
+             if(val[k]>=val[p]){
+            equal++;
+           } // else{
+          //   notequal++;
+          // }
+          }
+        } 
+          int cal = (n-1)-equal;
+         if(equal>=cal){
+          count++;
+        }     
+     // System.out.println("equal"+equal+"notequal"+notequal);
+      }
+       System.out.println(count);
+      }
+    }
+}
+
