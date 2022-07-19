@@ -39,3 +39,43 @@ TestCase 1: Since all the 4 available topics have been taken up, Chef can't choo
 TestCase 2: Since only 3 distinct topics out of the 4 available have been taken up, Chef can choose the remaining one, i.e, topic 3 to win the prize jointly with the first and the second researcher.
 
 TestCase 3: Since only 1 distinct topic out of the 4 available has been taken up, Chef can choose any of the remaining ones to win the prize.
+---------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class nobel {
+  public static void main(String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
+    int t = sc.nextInt();  
+       
+    for(int i=0;i<t;i++){
+      int n = sc.nextInt(); 
+      int m = sc.nextInt();
+
+      if(n==1 && m>=1 || n<m) {
+                System.out.println("Yes");
+                continue;
+            }
+      
+      HashSet<Integer> h = new HashSet<Integer>();
+      for(int j=0;j<n;j++){
+        int a = sc.nextInt();
+        h.add(a);
+      }
+      boolean ispresent = false;
+      for(int k=1;k<=n;k++){
+        if(!h.contains(k)){
+          ispresent = true;
+          break;
+        }
+      }
+      if(ispresent){
+        System.out.println("Yes");
+      }else{
+        System.out.println("No");
+      }
+      }
+    }
+}
+
