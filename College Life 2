@@ -100,3 +100,75 @@ There are total 55 seasons. The intro song in every season lasts for 1010 minute
 For each of the five seasons, since there is only 11 episode, Chef will be watching all of them completely - 1111 minutes each.
 
 So, the total time spent is 11 * 5 = 5511∗5=55 minutes.
+
+---------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class clg {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    int t = sc.nextInt();  
+      
+    for(int i=0;i<t;i++){
+      
+      int s = sc.nextInt(); 
+      int[] intro = new int[s];
+      long total=0;
+      for(int j=0;j<s;j++){
+      
+        intro[j] = sc.nextInt();
+        
+        
+        for(int k=0;k<s;k++){
+          
+          int ep = sc.nextInt();
+          
+          for(int p=0;p<ep;p++){
+            int dur = sc.nextInt();
+            if(p == 0){
+              total+= dur;
+            }else{
+              total+= (dur - intro[p]);
+            }
+          }    
+        }
+      }
+      System.out.println(total);
+      }
+      
+    }
+}
+	// Scanner sc = new Scanner(System.in);
+	// 	int t = sc.nextInt();
+	// 	while(t-->0)
+	// 	{
+	// 	    int s = sc.nextInt();
+	// 	    int a[] = new int[s];
+	// 	    for (int i=0;i<s;i++)
+	// 	    {
+	// 	        a[i]=sc.nextInt();
+	// 	    }
+	// 	    long r =0;
+	// 	    for(int i=0;i<s;i++)
+	// 	    {
+	// 	        int n = sc.nextInt();
+		        
+	// 	        int arr[] = new int[n];
+	// 	        for(int j=0;j<n;j++)
+	// 	        {
+	// 	            arr[j]=sc.nextInt();
+	// 	            if(j==0){
+	// 	            r=r+arr[j];
+	// 	            }
+	// 	            else
+	// 	            {
+	// 	                r=r+(arr[j]-a[i]);
+	// 	            }
+	// 	        }
+		        
+		        
+	// 	    }
+	// 	    System.out.println(r);
+	// 	}
