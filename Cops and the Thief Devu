@@ -45,3 +45,84 @@ Test case 2: Based on the speed, each cop can cover 20 houses on each side. Thes
 Cop in house 21 can cover houses 1 to 20 if he travels left and houses 22 to 41 if he travels right. Thus, this cop can cover houses numbered 1 to 41.
 Cop in house 75 can cover houses 55 to 74 if he travels left and houses 76 to 95 if he travels right. Thus, this cop can cover houses numbered 55 to 95.
 Thus, the safe houses are house number 42 to 54 and 96 to 100. There are 18 safe houses.
+--------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class cops {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    int t = sc.nextInt();
+    
+    for(int i=0;i<t;i++){
+
+      int m = sc.nextInt();
+      int[] cops = new int[m];
+      int x = sc.nextInt();
+      int y = sc.nextInt();
+
+      for(int j=0;j<m;j++){
+        cops[j] = sc.nextInt();
+      }
+      int totalhouse = 100;
+      boolean[] ispresent = new boolean[totalhouse];
+      
+      for(int k=1;k<m;k++){
+        for(int p=cops[k];p<=(cops[k] + x*y) && p<100;p++){
+          ispresent[p-1] = true;
+        }
+        for(int q=cops[k];q>=(cops[k] - x*y) && q>= 0;q--){
+          if(q>=0){
+            ispresent[q-1] = true;
+          }
+        }  
+      }
+      int ans = 0;
+      for(int r=0;r<100;r++){
+        if(ispresent[r]== false){
+          ans++;
+        }    
+      }
+      System.out.println(ans);
+      }    
+  }
+}
+
+--------------------------------------------------------
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	   	Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+		while(t-->0){
+		    //String s[] = sc.readLine().split(" ");
+		    int m = sc.nextInt();
+		    int x= sc.nextInt();
+		    int y = sc.nextInt();
+		    
+		    int[] a = new int[101];
+		   // s=sc.readLine().split(" ");
+		    for(int i =0;i<m;i++){
+		       // a[i]=Integer.parseInt(s[i]);  
+		       a[i]=sc.nextInt();
+		    }
+		    int dis = x*y;
+		    int count=0;
+		    for(int i = 1 ; i<a.length ; i++){
+		        int l =0,r=0;
+		        boolean safe =true;
+		        for(int j =0;j<m;j++){
+		            l=Math.max(1,a[j]-dis);
+		            r=Math.min(100,a[j]+dis);
+		            if(i>=l && i<=r){
+		                safe=false;
+		            }
+		        }
+		        if(safe){
+		            count++;
+		        }
+		    }
+		    System.out.println(count);
+		}
