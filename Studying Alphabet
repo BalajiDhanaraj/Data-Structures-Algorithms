@@ -36,3 +36,44 @@ Explanation:
 The first word can be read.
 
 The second word contains the letters d, o and g that aren't known by Jeff.
+------------------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class alpha{
+
+public static void main(String[] args){
+
+    Scanner in = new Scanner(System.in);
+	 
+  String word = in.nextLine();
+  int noofwords = in.nextInt();
+  String[] dict = new String[noofwords];
+
+  for(int i=0;i<noofwords;i++){
+    dict[i] = in.next();
+  }
+  
+    for(int k=0;k<noofwords;k++){
+      String eachword = new String(dict[k]);
+      int yes_word = 0;
+      char[] wd = word.toCharArray();
+      char[] ew = eachword.toCharArray();
+      
+      for(int j=0;j<wd.length;j++){
+        for(int p=0;p<ew.length;p++){ 
+        if(wd[j]==ew[p]){
+          yes_word++;
+        }
+        }
+      }  
+      if(yes_word==ew.length){
+         System.out.println("Yes");
+         }else{
+         System.out.println("No");
+         }
+      
+    } 
+  }
+}  
+
