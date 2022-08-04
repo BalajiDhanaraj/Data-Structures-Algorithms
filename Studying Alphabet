@@ -77,3 +77,27 @@ public static void main(String[] args){
   }
 }  
 
+-------------------------------------------------------------
+	Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		
+		int n=sc.nextInt();
+		String[] ar=new String[n];
+		for(int i=0;i<n;++i) {
+		    ar[i]=sc.next();
+		}
+		
+		HashSet<Character> set= new HashSet<>();
+		
+		for(int i=0;i<s.length();++i) set.add(s.charAt(i));
+		//System.out.println(set);
+		
+		for(int i=0;i<n;++i) {
+    		int count=0;
+
+		    for(int j=0;j<ar[i].length();++j) {
+		        if(set.contains(ar[i].charAt(j))) ++count;
+		    }
+		    if(count == ar[i].length()) System.out.println("Yes");
+		    else System.out.println("No");
+		}
