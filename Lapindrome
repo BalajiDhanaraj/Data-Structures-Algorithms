@@ -25,3 +25,133 @@ YES
 YES
 NO
 NO
+--------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class lap{
+
+public static void main(String[] args){
+ Scanner in = new Scanner(System.in);
+  int tc = in.nextInt();
+  
+  for(int i=0;i<tc;i++){
+
+    String word = in.next();
+
+    int check_word = word.length();
+   
+    if(check_word%2==0){
+      String even_words = word;
+      int even = even_words.length();
+     // System.out.println("even");
+      char[] first = new char[even/2];
+      char[] second = new char[even];
+      
+      for(int j=0;j<even;j++){
+        if(j<first.length){
+        first[j] = even_words.charAt(j);
+         //System.out.println(first[j]);
+        }
+      }
+      for(int k=even/2;k<even;k++){
+        if(k<=even){
+          // System.out.println(k);
+        second[k] = even_words.charAt(k);
+        // System.out.println(second[k]);
+        }
+      } 
+        Arrays.sort(first);
+        Arrays.sort(second);
+        String f = new String(first);
+        // System.out.println(f+""+f.length());
+        String s = new String(second);
+       // System.out.println(s+""+s.length());
+      
+       if(f.contains(s.trim())){
+         System.out.println("Yes");
+       }else{
+         System.out.println("No");
+       }
+            
+    }else{
+      
+       StringBuilder sb = new StringBuilder(word);
+       // System.out.println(sb.deleteCharAt(s).toString());
+      int len = sb.length()/2;
+      String odd_words = sb.deleteCharAt(len).toString();
+      int odd = odd_words.length();
+      
+     // System.out.println("odd"+odd);
+      
+      char[] first = new char[odd/2];
+      char[] second = new char[odd];
+      
+      for(int j=0;j<odd;j++){
+        if(j<first.length){
+        first[j] = odd_words.charAt(j);
+         //System.out.println(first[j]);
+        }
+      }
+      for(int k=odd/2;k<odd;k++){
+        if(k<=odd){
+          // System.out.println(k);
+        second[k] = odd_words.charAt(k);
+        // System.out.println(second[k]);
+        }
+      } 
+        Arrays.sort(first);
+        Arrays.sort(second);
+        String f = new String(first);
+        // System.out.println(f+""+f.length());
+        String s = new String(second);
+       // System.out.println(s+""+s.length());
+      
+       if(f.contains(s.trim())){
+         System.out.println("Yes");
+       }else{
+         System.out.println("No");
+       }
+            
+    }
+    } 
+  
+  } 
+}
+
+/*
+ public static void main (String[] args) throws java.lang.Exception
+    {
+        // your code goes here
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t--!=0)
+        {
+            String S = sc.next();
+            int len = S.length();
+            String half1="",half2="";
+            int c=0;
+            half1=S.substring(0,len/2);
+            if(len%2==0) half2=S.substring(len/2);
+            else if(len%2!=0) half2=S.substring(len/2+1);
+            char h1[] = half1.toCharArray();
+            char h2[] = half2.toCharArray();
+            Arrays.sort(h1);
+            Arrays.sort(h2);
+             String a = String.copyValueOf(h1);
+            String b = String.copyValueOf(h2);
+    
+            if(a.equals(b)) 
+            {
+                System.out.println("YES");
+            }
+            else
+            {
+                System.out.println("NO");
+            }
+        }
+        sc.close();
+    }
+
+*/
+  
