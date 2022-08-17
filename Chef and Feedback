@@ -33,3 +33,26 @@ The string doesn't contain 010 or 101 as substrings.
 
 Example case 2.
 The string contains both 010 and 101 as substrings.
+
+-------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class feed{
+  public static void main(String args[]){
+
+  Scanner in = new Scanner(System.in);
+  int tc = in.nextInt();
+
+    for(int i=0;i<tc;i++){
+
+      String feed = in.next();
+
+      if(feed.contains("010") || feed.contains("101")){
+        System.out.println("Good");
+      }else{
+        System.out.println("Bad");
+      }  
+    }  
+  }
+}
