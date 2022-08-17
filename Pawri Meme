@@ -28,3 +28,22 @@ Example case 1: There is no substring "party" in the original string.
 Example case 2: The original string has 22 substrings "party".
 
 Example case 3: There is only a single substring "party" in the original string.
+---------------------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class party{
+
+public static void main(String[] args){
+ Scanner in = new Scanner(System.in);
+  int tc = in.nextInt();
+  
+  for(int i=0;i<=tc;i++){
+
+
+    String a = in.next();
+		String answer = a.replace("party", "pawri");
+		System.out.println(answer);
+}
+}
+}
