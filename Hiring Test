@@ -62,3 +62,42 @@ Sample Test 1: There are 44 candidates and 55 problems. Each candidate needs to 
 Sample Test 2: The candidates need to either solve at least one problem completely, or they need to solve three or more problems partially. Only candidates 11 and 33 satisfy this.
 
 Sample Test 3: The candidate needs to either solve two or more problems completely, or solve at least one problems completely and two problems partially. The candidate does not satisfy this.
+---------------------------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class hire{
+ public static void main(String args[]){
+
+  Scanner in = new Scanner(System.in);
+  int tc = in.nextInt();
+
+    for(int i=0;i<tc;i++){
+
+      int can = in.nextInt();
+      int prob = in .nextInt();
+      int x = in.nextInt();
+      int y = in.nextInt();
+      
+      for(int j=0;j<can;j++){
+       int countX = 0;
+       int countY = 0;
+       String res = in.next();
+      for(int k=0;k<prob;k++){
+        if('F' == res.charAt(k)){
+          countX++;
+        }else if('P' == res.charAt(k)){
+          countY++;
+        }
+       }
+        if(countX>=x || countX>=x-1 && countY>=y){
+          System.out.print("1");
+        }else{
+          System.out.print("0");
+        }
+      }
+      System.out.println(" ");
+    }  
+    
+  }
+}
