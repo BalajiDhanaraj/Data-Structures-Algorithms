@@ -35,3 +35,44 @@ nd
   \texttt{?}? of string YY by characters \texttt{r}r and \texttt{e}e respectively.
 Test case 22: There exists no way to fill the \texttt{?}? such that the strings become equal. Thus, the answer is No.
 --------------------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class wild {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int tc = sc.nextInt();
+
+    for(int i=0;i<tc;i++){
+
+      String x = sc.next();
+      String y = sc.next();
+      
+      if(x.length()==y.length()){
+        char[] cx = x.toCharArray();
+        char[] cy = y.toCharArray();
+        for(int j=0;j<x.length();j++){
+          if(cx[j]=='?'){
+            cx[j] = cy[j];
+          }else if(cy[j]=='?'){
+            cy[j] = cx[j];
+          }
+        }
+         String x1 = String.valueOf(cx);
+         String y1 = String.valueOf(cy);
+         if(x1.equals(y1)){
+          System.out.println("Yes");
+         }else{
+           System.out.println("No");
+         }
+        
+        }       
+      }   
+    } 
+}
+
+// if(x1.charAt(j) == y1.charAt(j)){ 
+  // }else{
+  //   String xv = x.replace('?',y.charAt(j));
+  //   System.out.println(xv);
+  // }
