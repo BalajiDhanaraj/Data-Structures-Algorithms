@@ -40,3 +40,59 @@ Finally, since both of them have equal points, the game results in DRAW.
 
 Test case 22: There is only one string that starts with one of the letters of the word EQUINOX which is XOXOXOXO. Thus, Sarthak gets 55 point for this string. There is one string that does not start with one of the letters of the word EQUINOX. Thus, Anuradha gets 77 points for that string.
 Finally, Anuradha has the higher score. So she is the winner.
+-----------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class equ{
+  public static void main(String args[]){
+
+  Scanner in = new Scanner(System.in);
+  int tc = in.nextInt();
+
+    for(int i=0;i<tc;i++){
+
+    int no_of_words = in.nextInt();
+    int he = in.nextInt();
+    int she = in.nextInt();
+
+    int countx = 0;
+    int county = 0;
+    String word = "EQUINOX";
+      
+    String[] eachword = new String[no_of_words];
+    for(int j=0;j<no_of_words;j++){
+     String str = in.next();
+     eachword[j] = str.toUpperCase();
+    }
+      
+
+     for(int k=0;k<eachword.length;k++){
+       String signalword = eachword[k];
+       System.out.println("-------------------------");
+
+         char ch = signalword.charAt(0);
+         String sin = Character.toString(ch);
+        if(word.contains(sin)){
+        System.out.println("in---"+ch+"--"+signalword);
+        countx=countx+he;
+        }else{
+          System.out.println("out---"+ch+"--"+signalword);
+        county=county+she;
+          
+        }  
+     }
+   
+    System.out.println(countx+"---"+county);
+    if(countx>county){
+      System.out.println("SARTHAK");
+    }else if(countx<county){
+      System.out.println("ANURADHA");
+    }else if(countx==county){
+      System.out.println("DRAW");
+    }
+  
+    } 
+    }
+    }
+    
