@@ -25,3 +25,28 @@ Explanation:
 Test case 11: All substrings of this string start and end with 1. The substrings are \{ 1, 1, 1, 1, 11, 11, 11, 111, 111, 1111 \}{1,1,1,1,11,11,11,111,111,1111}. The total count of these substrings is 1010.
 
 Test case 22: Three substrings of this string start and end with 1. These are \{1, 1, 10001\}{1,1,10001}.
+
+-----------------------------------------------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+
+class sub{
+
+public static void main(String[] args){
+ Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0)
+		{
+		    int n=sc.nextInt();
+		    String s=sc.next();
+		    long ans=0;
+		    long  ch=0;
+		    for(int i=0;i<n;i++)
+		    {if(s.charAt(i)=='1')
+		    ch++;
+		    }
+		    ans=ch*(ch-1)/2 + ch;
+		    System.out.println(ans);
+		}
+}
+} 
